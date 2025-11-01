@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社内AI勉強会</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f4f5f9;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --accent: #4d6ef0;
+            --accent-strong: #3246b7;
+            --text: #1f2430;
+            --muted: #606b85;
+            font-size: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Hiragino Sans", "Noto Sans JP", "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 3rem 1rem;
+        }
+
+        .announcement {
+            width: min(900px, 100%);
+            background: linear-gradient(160deg, #eef1ff 0%, #f9fbff 100%);
+            box-shadow: 0 20px 50px rgba(13, 36, 84, 0.12);
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 260px;
+            background: url("https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1600&q=80") center/cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(77, 110, 240, 0.75), rgba(82, 125, 245, 0.55));
+            mix-blend-mode: multiply;
+        }
+
+        .hero__content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            padding: clamp(2rem, 6vw, 3.5rem);
+            color: #fff;
+        }
+
+        .hero__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero__title {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .hero__subtitle {
+            max-width: 38ch;
+            margin: 0;
+            font-size: clamp(1rem, 2.4vw, 1.2rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2.5rem;
+            padding: clamp(2.5rem, 6vw, 3.5rem);
+            background: var(--card-bg);
+            backdrop-filter: blur(18px);
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .detail-item__label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .detail-item__value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121623;
+                --card-bg: rgba(19, 24, 40, 0.85);
+                --text: #e8ecff;
+                --muted: #9aa5c9;
+            }
+
+            body {
+                background: radial-gradient(circle at top, rgba(60, 76, 158, 0.45), transparent 45%),
+                    var(--bg);
+            }
+
+            .announcement {
+                background: linear-gradient(160deg, rgba(40, 52, 97, 0.8), rgba(27, 35, 68, 0.9));
+            }
+
+            .detail-item__value {
+                color: #f0f3ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="announcement" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+                <span class="hero__eyebrow">Learning Session</span>
+                <h1 class="hero__title" id="hero-title">社内AI勉強会 2024</h1>
+                <p class="hero__subtitle">
+                    最新のAIトレンドや活用事例を共有し、チーム全体で新しい発想を生み出すための参加型セッションです。
+                </p>
+            </div>
+        </section>
+        <section class="details" aria-label="開催情報">
+            <div class="detail-item">
+                <span class="detail-item__label">タイトル</span>
+                <span class="detail-item__value">未来を創るAI戦略ワークショップ</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-item__label">開催日時</span>
+                <span class="detail-item__value">2024年7月18日（木） 15:00 - 18:00</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-item__label">場所</span>
+                <span class="detail-item__value">本社オフィス 15F Innovation Hub</span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
